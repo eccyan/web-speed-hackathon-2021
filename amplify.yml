@@ -1,0 +1,33 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 16.13.0
+        - nvm use 16.13.0
+        - chown -R root:root /root/.nvm
+        - npm config set user 0
+        - npm config set unsafe-perm true
+        - yarn workspace @web-speed-hackathon-2021/client install
+    build:
+      commands:
+        - yarn workspace @web-speed-hackathon-2021/client build
+    postBuild:
+      commands:
+        - mkdir -p ./static
+        - cp -R ./dist/* ./static
+        - cp -R ./public/* ./static
+        - cp -R ./upload/* ./static
+        - ls -la ./static
+  artifacts:
+    baseDirectory: /static/
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+backend:
+  phases:
+    build:
+      commands:
+        - echo 'Ignored backend build.'

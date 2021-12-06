@@ -10,6 +10,15 @@
     "server"
   ],
   "engines": {
-    "node": "16.x.x"
+    "node": "16.13.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "node-gyp": "^7.1.2",
+    "sharp": "^0.29.3",
+    "yarn": "^1.22.17"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.2"
   }
 }

@@ -25,6 +25,8 @@ app.use((_req, res, next) => {
     'Cache-Control': 'max-age=0, no-transform',
     Connection: 'close',
   });
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   return next();
 });
 
