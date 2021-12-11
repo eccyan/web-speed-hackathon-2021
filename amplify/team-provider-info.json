@@ -1,46 +1,15 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-hackathon-dev-174352-authRole",
-      "UnauthRoleArn": "arn:aws:iam::888446116116:role/amplify-hackathon-dev-174352-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::888446116116:role/amplify-hackathon-dev-174352-authRole",
+      "AuthRoleName": "amplify-hackathon-dev-43004-authRole",
+      "UnauthRoleArn": "arn:aws:iam::888446116116:role/amplify-hackathon-dev-43004-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::888446116116:role/amplify-hackathon-dev-43004-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-hackathon-dev-174352-deployment",
-      "UnauthRoleName": "amplify-hackathon-dev-174352-unauthRole",
-      "StackName": "amplify-hackathon-dev-174352",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:888446116116:stack/amplify-hackathon-dev-174352/cfe00440-5739-11ec-9142-061edc67a11d",
-      "AmplifyAppId": "d2id2tr2pljv5v",
-      "NetworkStackS3Url": "https://s3.amazonaws.com/amplify-hackathon-dev-174352-deployment/amplify-cfn-templates/networkingStackTemplate.json"
-    },
-    "categories": {
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "d2id2tr2pljv5v",
-          "type": "cicd"
-        }
-      }
-    }
-  },
-  "test": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-hackathon-test-25602-authRole",
-      "UnauthRoleArn": "arn:aws:iam::888446116116:role/amplify-hackathon-test-25602-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::888446116116:role/amplify-hackathon-test-25602-authRole",
-      "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-hackathon-test-25602-deployment",
-      "UnauthRoleName": "amplify-hackathon-test-25602-unauthRole",
-      "StackName": "amplify-hackathon-test-25602",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:888446116116:stack/amplify-hackathon-test-25602/9ce34410-5aab-11ec-9d5d-062bdbc94911",
-      "AmplifyAppId": "d359wqx9xoe7qt",
-      "NetworkStackS3Url": "https://s3.amazonaws.com/amplify-hackathon-test-25602-deployment/amplify-cfn-templates/networkingStackTemplate.json"
-    },
-    "categories": {
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "d359wqx9xoe7qt",
-          "type": "cicd"
-        }
-      }
+      "DeploymentBucketName": "amplify-hackathon-dev-43004-deployment",
+      "UnauthRoleName": "amplify-hackathon-dev-43004-unauthRole",
+      "StackName": "amplify-hackathon-dev-43004",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:888446116116:stack/amplify-hackathon-dev-43004/bfef5c20-5ab8-11ec-ab4a-0a51e9487859",
+      "AmplifyAppId": "d1kt6spuapkybn"
     }
   }
 }
