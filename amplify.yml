@@ -17,7 +17,6 @@ frontend:
         - mkdir -p ./static
         - cp -R ./dist/* ./static
         - cp -R ./public/* ./static
-        - cp -R ./upload/* ./static
         - ls -la ./static
   artifacts:
     baseDirectory: /static/
