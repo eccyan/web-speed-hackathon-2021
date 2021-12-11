@@ -20,5 +20,27 @@
         }
       }
     }
+  },
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hackathon-test-25602-authRole",
+      "UnauthRoleArn": "arn:aws:iam::888446116116:role/amplify-hackathon-test-25602-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::888446116116:role/amplify-hackathon-test-25602-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-hackathon-test-25602-deployment",
+      "UnauthRoleName": "amplify-hackathon-test-25602-unauthRole",
+      "StackName": "amplify-hackathon-test-25602",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:888446116116:stack/amplify-hackathon-test-25602/9ce34410-5aab-11ec-9d5d-062bdbc94911",
+      "AmplifyAppId": "d359wqx9xoe7qt",
+      "NetworkStackS3Url": "https://s3.amazonaws.com/amplify-hackathon-test-25602-deployment/amplify-cfn-templates/networkingStackTemplate.json"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d359wqx9xoe7qt",
+          "type": "cicd"
+        }
+      }
+    }
   }
 }
