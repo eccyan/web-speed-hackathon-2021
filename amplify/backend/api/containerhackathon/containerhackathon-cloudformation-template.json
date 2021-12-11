@@ -129,17 +129,47 @@
                 "",
                 [
                   {
-                    "Ref": "AWS::AccountId"
+                    "Fn::Select": [
+                      4,
+                      {
+                        "Fn::Split": [
+                          ":",
+                          {
+                            "Fn::GetAtt": [
+                              "serverRepository",
+                              "Arn"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   },
                   ".dkr.ecr.",
                   {
-                    "Ref": "AWS::Region"
+                    "Fn::Select": [
+                      3,
+                      {
+                        "Fn::Split": [
+                          ":",
+                          {
+                            "Fn::GetAtt": [
+                              "serverRepository",
+                              "Arn"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   },
                   ".",
                   {
                     "Ref": "AWS::URLSuffix"
                   },
-                  "/amplify-hackathon-dev-174352-api-containerhackathon-server:latest"
+                  "/",
+                  {
+                    "Ref": "serverRepository"
+                  },
+                  ":latest"
                 ]
               ]
             },
@@ -226,23 +256,9 @@
               ],
               "Effect": "Allow",
               "Resource": {
-                "Fn::Join": [
-                  "",
-                  [
-                    "arn:",
-                    {
-                      "Ref": "AWS::Partition"
-                    },
-                    ":ecr:",
-                    {
-                      "Ref": "AWS::Region"
-                    },
-                    ":",
-                    {
-                      "Ref": "AWS::AccountId"
-                    },
-                    ":repository/amplify-hackathon-dev-174352-api-containerhackathon-server"
-                  ]
+                "Fn::GetAtt": [
+                  "serverRepository",
+                  "Arn"
                 ]
               }
             },
@@ -313,6 +329,27 @@
       "UpdateReplacePolicy": "Delete",
       "DeletionPolicy": "Delete"
     },
+    "serverRepository": {
+      "Type": "AWS::ECR::Repository",
+      "Properties": {
+        "LifecyclePolicy": {
+          "LifecyclePolicyText": "{\"rules\":[{\"rulePriority\":10,\"selection\":{\"tagStatus\":\"tagged\",\"tagPrefixList\":[\"latest\"],\"countType\":\"imageCountMoreThan\",\"countNumber\":1},\"action\":{\"type\":\"expire\"}},{\"rulePriority\":100,\"selection\":{\"tagStatus\":\"any\",\"countType\":\"sinceImagePushed\",\"countNumber\":7,\"countUnit\":\"days\"},\"action\":{\"type\":\"expire\"}}]}"
+        },
+        "RepositoryName": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "rootStackName"
+              },
+              "-api-containerhackathon-server"
+            ]
+          ]
+        }
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain"
+    },
     "ServiceSG": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
@@ -345,7 +382,7 @@
         "Cluster": {
           "Ref": "NetworkStackClusterName"
         },
-        "DesiredCount": 1,
+        "DesiredCount": 0,
         "LaunchType": "FARGATE",
         "NetworkConfiguration": {
           "AwsvpcConfiguration": {
@@ -870,17 +907,47 @@
                         },
                         "\"},{\"name\":\"server_REPOSITORY_URI\",\"type\":\"PLAINTEXT\",\"value\":\"",
                         {
-                          "Ref": "AWS::AccountId"
+                          "Fn::Select": [
+                            4,
+                            {
+                              "Fn::Split": [
+                                ":",
+                                {
+                                  "Fn::GetAtt": [
+                                    "serverRepository",
+                                    "Arn"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
                         },
                         ".dkr.ecr.",
                         {
-                          "Ref": "AWS::Region"
+                          "Fn::Select": [
+                            3,
+                            {
+                              "Fn::Split": [
+                                ":",
+                                {
+                                  "Fn::GetAtt": [
+                                    "serverRepository",
+                                    "Arn"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
                         },
                         ".",
                         {
                           "Ref": "AWS::URLSuffix"
                         },
-                        "/amplify-hackathon-dev-174352-api-containerhackathon-server\"}]"
+                        "/",
+                        {
+                          "Ref": "serverRepository"
+                        },
+                        "\"}]"
                       ]
                     ]
                   }
@@ -2194,5 +2261,6 @@
         ]
       }
     }
-  }
+  },
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"7.6.3\",\"stackType\":\"api-ElasticContainer\",\"metadata\":{}}"
 }
