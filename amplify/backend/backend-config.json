@@ -28,5 +28,12 @@
       "apiType": "REST",
       "iamAccessUnavailable": true
     }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2021-12-12T01:06:58.966Z"
+    }
   }
 }
