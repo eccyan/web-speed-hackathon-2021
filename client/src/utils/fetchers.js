@@ -21,11 +21,14 @@ async function fetchBinary(url) {
  * @returns {Promise<T>}
  */
 async function fetchJSON(url) {
+  const base = 'https://owoo9rbdj6.execute-api.ap-northeast-1.amazonaws.com';
+  const u = base + url;
+
   const result = await $.ajax({
     async: false,
     dataType: 'json',
     method: 'GET',
-    url,
+    u,
   });
   return result;
 }
